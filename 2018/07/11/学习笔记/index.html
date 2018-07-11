@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="moonhwi的小站">
 <meta property="og:description" content="绪论  机器学习可以使计算机根据算法对不同数据进行不同的操作。机器学习使用分为回归、分类两个问题，分为无监督学习与监督学习两个类别。  回归：输出是多个连续变量，最为简单的回归就是我们在高中数学中学到的回归曲线，根据回归方程可以给出的输出值为一个变量。  分类：分类问题比回归难。比如一系列图像数据分为自拍，景色，人像等等之类的类别，属于离散解。  无监督学习：在计算机不知道数据的具体分类进行自主分">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-10T15:29:49.031Z">
+<meta property="og:image" content="http://yoursite.com/2018/07/11/学习笔记/1-1.jpg">
+<meta property="og:updated_time" content="2018-07-11T07:05:26.910Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PRML第一章学习笔记">
 <meta name="twitter:description" content="绪论  机器学习可以使计算机根据算法对不同数据进行不同的操作。机器学习使用分为回归、分类两个问题，分为无监督学习与监督学习两个类别。  回归：输出是多个连续变量，最为简单的回归就是我们在高中数学中学到的回归曲线，根据回归方程可以给出的输出值为一个变量。  分类：分类问题比回归难。比如一系列图像数据分为自拍，景色，人像等等之类的类别，属于离散解。  无监督学习：在计算机不知道数据的具体分类进行自主分">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/11/学习笔记/1-1.jpg">
 
 
 
@@ -258,7 +260,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="limenghui">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -282,7 +284,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T00:00:06+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T14:41:01+08:00">
                 2018-07-11
               </time>
             
@@ -343,9 +345,10 @@
 
       
         <h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><p>  机器学习可以使计算机根据算法对不同数据进行不同的操作。机器学习使用分为回归、分类两个问题，分为无监督学习与监督学习两个类别。<br>  回归：输出是多个连续变量，最为简单的回归就是我们在高中数学中学到的回归曲线，根据回归方程可以给出的输出值为一个变量。<br>  分类：分类问题比回归难。比如一系列图像数据分为自拍，景色，人像等等之类的类别，属于离散解。<br>  无监督学习：在计算机不知道数据的具体分类进行自主分类，而不是在给定的标签中做匹配。<br>  监督学习：人为提供离散的标签，计算机根据机器学习算法对其进行合适的分类。</p>
-<h2 id="回归"><a href="#回归" class="headerlink" title="回归"></a>回归</h2><h3 id="1-1-多项式曲线拟合"><a href="#1-1-多项式曲线拟合" class="headerlink" title="1.1 多项式曲线拟合"></a>1.1 多项式曲线拟合</h3><p>简单的拟合方法：<br>$y(x;w) = w_0 + w_1x +\cdots =\sum\limits_{i=0}^{N} w_jx^j$<br>其中M是多项式的阶数$（order），x_j$表⽰$x$的$j$次幂。多项式系数$w_0$; $w_M$整体记作向量<strong>$w$</strong>。注意，虽然多项式函数$y(x,w)$是x的⼀个⾮线性函数，它是系数$w$的⼀个线性函数。类似多项式函数的这种关于未知参数满⾜线性关系的函数有着重要的性质，被叫做线性模型。</p>
+<h2 id="1-1-多项式曲线拟合"><a href="#1-1-多项式曲线拟合" class="headerlink" title="1.1 多项式曲线拟合"></a>1.1 多项式曲线拟合</h2><p>简单的拟合方法：<br>$y(x;w) = w_0 + w_1x +\cdots =\sum\limits_{i=0}^{N} w_jx^j$<br>其中M是多项式的阶数$（order），x_j$表⽰$x$的$j$次幂。多项式系数$w_0$; $w_M$整体记作向量<strong>$w$</strong>。注意，虽然多项式函数$y(x,w)$是x的⼀个⾮线性函数，它是系数$w$的⼀个线性函数。类似多项式函数的这种关于未知参数满⾜线性关系的函数有着重要的性质，被叫做线性模型。</p>
 <p>系数的值可以通过调整多项式函数拟合训练数据的⽅式确定，根据训练数据可以计算$w$，计算方法一般为最小化错误函数<br>$E(w)=\sum\limits_{i=1}^N{ y(x_n,w)-t_n}^2$<br>但是由于$M$的值不同，可以产生多个拟合函数，需要选择$M$防止出现$over-fitting$(过拟合)，这种情况出现在$M$过大时，此时函数会出现剧烈震荡，有时候也可以使用<br>$E_{RMS}=\sqrt{\frac{2E(w^*)}{N}}$</p>
-
+<p>值的大小与$M$的关系如下图所示<br><img src="/2018/07/11/学习笔记/1-1.jpg" alt="RMS&amp;M"><br>虽然可以很好地符合training data但是test data会产生很大的偏差，所以应该根据问题的复杂度选择$M$。<br>一种解决方法是正则化，修改误差函数为<br>$E^~(w)=\frac{1}{2}\sum\limits_{n=1}^N{ y(x_n,w)-t_n^2}+\frac{\lambda}{2}||w||^2$<br>$∥w∥= w^Tw = w^2_0 + w^2_1 + \cdots + w^2_M$<br>理解起来就是在高拟合for training data的情况下也要降低w也是模型的复杂度。</p>
+<h2 id="1-2-贝叶斯公式"><a href="#1-2-贝叶斯公式" class="headerlink" title="1.2 贝叶斯公式"></a>1.2 贝叶斯公式</h2>
       
     </div>
     
@@ -375,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/07/日记(1)-答辩 (2)/" rel="next" title="日记(1)-答辩">
-                <i class="fa fa-chevron-left"></i> 日记(1)-答辩
+              <a href="/2018/07/11/学习笔记/学习笔记/" rel="next" title="PRML第一章学习笔记">
+                <i class="fa fa-chevron-left"></i> PRML第一章学习笔记
               </a>
             
           </div>
@@ -449,6 +452,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="limenghui" />
+            
               <p class="site-author-name" itemprop="name">limenghui</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -460,7 +467,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -493,6 +500,22 @@
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/moonhwi" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:limenghui773@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
 
           
           
@@ -515,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#回归"><span class="nav-number">1.1.</span> <span class="nav-text">回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-多项式曲线拟合"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 多项式曲线拟合</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-number">1.</span> <span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-多项式曲线拟合"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 多项式曲线拟合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-贝叶斯公式"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 贝叶斯公式</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -549,11 +572,7 @@
 
 
 
-  <span class="post-meta-divider">|</span>
 
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
@@ -600,6 +619,8 @@
   
 
 
+  
+
 
 
 
@@ -638,6 +659,11 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
