@@ -88,7 +88,7 @@
 <meta property="og:description" content="绪论 多项式曲线拟合 贝叶斯定理 回归问题的损失函数  绪论  机器学习可以使计算机根据算法对不同数据进行不同的操作。机器学习使用分为回归、分类两个问题，分为无监督学习与监督学习两个类别。  回归：输出是多个连续变量，最为简单的回归就是我们在高中数学中学到的回归曲线，根据回归方程可以给出的输出值为一个变量。  分类：分类问题比回归难。比如一系列图像数据分为自拍，景色，人像等等之类的类别，属于离散">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/07/10/学习笔记/1-1.jpg">
-<meta property="og:updated_time" content="2018-07-12T12:17:09.793Z">
+<meta property="og:updated_time" content="2018-07-16T06:12:11.459Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PRML第一章学习笔记">
 <meta name="twitter:description" content="绪论 多项式曲线拟合 贝叶斯定理 回归问题的损失函数  绪论  机器学习可以使计算机根据算法对不同数据进行不同的操作。机器学习使用分为回归、分类两个问题，分为无监督学习与监督学习两个类别。  回归：输出是多个连续变量，最为简单的回归就是我们在高中数学中学到的回归曲线，根据回归方程可以给出的输出值为一个变量。  分类：分类问题比回归难。比如一系列图像数据分为自拍，景色，人像等等之类的类别，属于离散">
@@ -218,7 +218,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            归档
+            时间轴
           </a>
         </li>
       
@@ -277,6 +277,14 @@
 
         <div class="post-meta">
           <span class="post-time">
+          
+  <span class="post-updated">
+  &nbsp; | &nbsp; 更新于
+  <time itemprop="dateUpdated" datetime="2018-07-16T14:12:11+08:00" content="2018-07-16">
+    2018-07-16
+  </time>
+  </span>
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -351,6 +359,7 @@
 <li><a href="#回归问题的损失函数">回归问题的损失函数</a></li>
 </ul>
 <h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><p>  机器学习可以使计算机根据算法对不同数据进行不同的操作。机器学习使用分为回归、分类两个问题，分为无监督学习与监督学习两个类别。<br>  回归：输出是多个连续变量，最为简单的回归就是我们在高中数学中学到的回归曲线，根据回归方程可以给出的输出值为一个变量。<br>  分类：分类问题比回归难。比如一系列图像数据分为自拍，景色，人像等等之类的类别，属于离散解。<br>  无监督学习：在计算机不知道数据的具体分类进行自主分类，而不是在给定的标签中做匹配。<br>  监督学习：人为提供离散的标签，计算机根据机器学习算法对其进行合适的分类。</p>
+  <a id="more"></a>
 <h2 id="多项式曲线拟合"><a href="#多项式曲线拟合" class="headerlink" title="多项式曲线拟合"></a>多项式曲线拟合</h2><p>简单的拟合方法：<br>$y(x;w) = w_0 + w_1x +\cdots =\sum\limits_{i=0}^{N} w_jx^j$<br>其中M是多项式的阶数$（order），x_j$表⽰$x$的$j$次幂。多项式系数$w_0$; $w_M$整体记作向量<strong>$w$</strong>。注意，虽然多项式函数$y(x,w)$是x的⼀个⾮线性函数，它是系数$w$的⼀个线性函数。类似多项式函数的这种关于未知参数满⾜线性关系的函数有着重要的性质，被叫做线性模型。</p>
 <p>系数的值可以通过调整多项式函数拟合训练数据的⽅式确定，根据训练数据可以计算$w$，计算方法一般为最小化错误函数<br>$E(w)=\sum\limits_{i=1}^N{ y(x_n,w)-t_n}^2$<br>但是由于$M$的值不同，可以产生多个拟合函数，需要选择$M$防止出现$over-fitting$(过拟合)，这种情况出现在$M$过大时，此时函数会出现剧烈震荡，有时候也可以使用<br>$E_{RMS}=\sqrt{\frac{2E(w^*)}{N}}$</p>
 <p><img src="/2018/07/10/学习笔记/1-1.jpg" alt="logo"><br>为了减小$w$的复杂度的同时减小$RMS$，可以引入一个惩罚项，修正后的误差函数如下：<br>$E^~(w)=\frac{1}{2}\sum\limits^N_{n=1}{y(x_n,w)-t_n }^2+\frac{\lambda}{2}||w||^2$</p>
@@ -396,8 +405,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/10/PRML第二章学习笔记/" rel="prev" title="PRML第二章学习笔记">
-                PRML第二章学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/15/北邮信通考研经验/" rel="prev" title="北邮信通考研经验to王叶">
+                北邮信通考研经验to王叶 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -501,7 +510,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
