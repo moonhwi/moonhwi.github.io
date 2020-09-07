@@ -1,2 +1,1 @@
-# outdoor
-go out
+一个无情的code机器
